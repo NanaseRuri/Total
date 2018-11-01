@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    <style>
+        div.view {
+            border: thin solid black;
+            margin: 5px 0;
+        }
+
+        div.ren {
+            background-color: lightgray;
+            margin: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    @RenderSection("Header")
+    <div class="ren">This is the header</div>
+
+    @RenderSection("Body")
+    <div class="ren">This is the body</div>
+
+    @if (IsSectionDefined("Footer"))
+    {
+        @RenderSection("Footer")
+        <div class="ren">This is the header</div>
+    }
+
+    @RenderSection("Script", false)
+    <div class="ren">This is the unnecessary script</div>
+</body>

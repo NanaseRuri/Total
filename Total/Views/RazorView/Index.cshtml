@@ -1,0 +1,31 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RazorLayout.cshtml";
+}
+
+@section Header
+{
+    <div class="view">
+        @foreach (var action in new[] { "List", "Index" })
+        {
+            @Html.ActionLink(action, action, null, new { style = "margin:5px" });
+        }
+    </div>
+}
+
+@section Body
+{
+    <div class="view">
+        <span>Fruits: </span>
+        @foreach (var fruit in Model)
+        {
+            <b>@fruit</b>
+        }
+    </div>
+}
+
+@section Footer
+{
+    <div class="view">This is the footer</div>
+}

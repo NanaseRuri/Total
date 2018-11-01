@@ -1,0 +1,23 @@
+﻿@model Total.Models.HelperMethods.Person
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayPerson</title>
+    <style type="text/css">.float-left {
+     float: left;
+ }</style>
+</head>
+<body>    
+<div class="float-left">
+    @Html.Label("FirstName")
+    @Html.DisplayFor(m=>m.FirstName)
+</div>
+</body>
+</html>

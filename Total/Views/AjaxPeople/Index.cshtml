@@ -1,0 +1,16 @@
+﻿
+@{
+    Layout = "_AjaxLayout.cshtml";
+}
+
+<table>
+    <thead><tr><th>Helper</th><th>Output</th></tr></thead>
+    <tbody>
+    <tr><td>Url.Content: </td><td>@Url.Content("~/Scripts/Common.css")</td></tr>
+    <tr><td>Url.Action</td><td>@Url.Action("GetPeopleData")</td></tr>
+    <tr><td>Html.ActionLink</td><td>@Html.ActionLink("Action","GetPeopleData",new{roleName="Admin"})</td></tr>
+    <tr><td>Url.RouteUrl</td><td>@Url.RouteUrl(new { controller = "AjaxPeople", action = "GetPeopleData" })</td></tr>
+    <tr><td>Html.RouteLink</td><td>@Html.RouteLink("HtmlRoute", "All", new { controller = "AjaxPeople", action = "GetPeopleData" })</td></tr>
+    <tr><td>Html.RouteLink</td><td>@Html.RouteLink("RouteLink", new { controller = "AjaxPeople", action = "GetPeopleData" })</td></tr>
+    </tbody>
+</table>

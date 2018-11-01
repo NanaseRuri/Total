@@ -1,0 +1,18 @@
+﻿@model Total.Models.ValidationSummary.Appointment
+
+@{
+    ViewBag.Title = "MakePointing";
+    Layout = "~/Views/Shared/_ValidationLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <p>@Html.ValidationMessageFor(m=>m.ClientName)</p>
+    <p>Your name: @Html.EditorFor(m=>m.ClientName)</p>
+    <p>@Html.ValidationMessageFor(m=>m.Date)</p>                                              
+    <p>Your free time: @Html.EditorFor(m=>m.Date)</p>
+    <p>@Html.ValidationMessageFor(m=>m.TermAccept)</p>
+    <p>@Html.EditorFor(m=>m.TermAccept) I accept the terms & conditions</p>
+    <div><input type="submit" value="submit"/></div>
+} 

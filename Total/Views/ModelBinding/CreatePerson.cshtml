@@ -1,0 +1,20 @@
+﻿@model Total.Models.HelperMethods.Person
+@{
+    ViewBag.Title = "CreatePerson";
+    Layout = "~/Views/Shared/_ModelBindingLayout.cshtml";
+}
+
+<h2>CreatePerson</h2>
+
+@using (Html.BeginForm("AddressSummary","ModelBinding"))
+{
+    <div>@Html.LabelFor(m=>m.PersonId)@Html.EditorFor(m=>m.PersonId)</div>
+    <div>@Html.LabelFor(m=>m.FirstName)@Html.EditorFor(m=>m.FirstName)</div>
+    <div>@Html.LabelFor(m=>m.LastName)@Html.EditorFor(m=>m.LastName)</div>
+    <div>@Html.LabelFor(m=>m.BirthDate)@Html.EditorFor(m=>m.BirthDate)</div>
+    <div>@Html.LabelFor(m=>m.Role)@Html.EditorFor(m=>m.Role)</div>
+    <div>@Html.LabelFor(m=>m.HomeAddress.City)@Html.EditorFor(m=>m.HomeAddress.City)</div>
+    <div>@Html.LabelFor(m=>m.HomeAddress.Country)@Html.EditorFor(m=>m.HomeAddress.Country)</div>
+
+    <div><input type="submit" value="submit"/></div>
+}

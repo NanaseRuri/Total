@@ -1,0 +1,457 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58C82E65-2D58-44E1-951B-874B6835CCA0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Total</RootNamespace>
+    <AssemblyName>Total</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES2015</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.3.1.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.3.1\lib\net45\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common.WebHost, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.WebHost.3.3.0\lib\net45\Ninject.Web.Common.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.3.0\lib\net45\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ErrorStyles.css" />
+    <Content Include="Content\RangeErrorPage.html" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Common.css" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Completed.cshtml" />
+    <Content Include="Views\Home\Rsvp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdditionalController\UrlsAndRoutesHomeController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActionsAndResults\BasicController.cs" />
+    <Compile Include="Controllers\ActionsAndResults\DerivedController.cs" />
+    <Compile Include="Controllers\ActionsAndResults\RedirectAndHttpError.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Bundle\BundleController.cs" />
+    <Compile Include="Controllers\CartNavigationController.cs" />
+    <Compile Include="Controllers\ControllerExtensibility\ActionInvokerController.cs" />
+    <Compile Include="Controllers\ControllerExtensibility\CustomerController.cs" />
+    <Compile Include="Controllers\ControllerExtensibility\FastController.cs" />
+    <Compile Include="Controllers\ControllerExtensibility\ProductForChangeController.cs" />
+    <Compile Include="Controllers\ControllerExtensibility\RemoteController.cs" />
+    <Compile Include="Controllers\CustomExtensionController.cs" />
+    <Compile Include="Controllers\CustomHelper\CustomHelperController.cs" />
+    <Compile Include="Controllers\Filters\FilterCustomController.cs" />
+    <Compile Include="Controllers\Filters\FilterHomeController.cs" />
+    <Compile Include="Controllers\HelperMethod\Ajax\AjaxPeopleController.cs" />
+    <Compile Include="Controllers\HelperMethod\HelperMethodController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ModelBinding\ModelBindingController.cs" />
+    <Compile Include="Controllers\NinjectController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RazorViewEngine\RazorViewController.cs" />
+    <Compile Include="Controllers\Routes\UrlsAndRoutesHomeController.cs" />
+    <Compile Include="Controllers\Routes\UrlsCustomerController.cs" />
+    <Compile Include="Controllers\SinglePageApp\SinglePageAppController.cs" />
+    <Compile Include="Controllers\SinglePageApp\WebController.cs" />
+    <Compile Include="Controllers\ValidationSummary\ValidationSummaryController.cs" />
+    <Compile Include="Controllers\ViewStartController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Infrastructure\Binders\CartModelBinder.cs" />
+    <Compile Include="Infrastructure\CartNinjectDependencyResolver.cs" />
+    <Compile Include="Infrastructure\ControllerExtensibility\CustomControllerActivator.cs" />
+    <Compile Include="Infrastructure\ControllerExtensibility\CustomerControllerFactory.cs" />
+    <Compile Include="Infrastructure\ControllerExtensibility\LocalAttribute.cs" />
+    <Compile Include="Infrastructure\ControllerExtensibility\CustomActionInvoker.cs" />
+    <Compile Include="Infrastructure\CustomRedirect.cs" />
+    <Compile Include="Controllers\CustomView\CustomViewController.cs" />
+    <Compile Include="Infrastructure\CustomView\CustomViewEngine.cs" />
+    <Compile Include="Infrastructure\CustomView\CustomViewView.cs" />
+    <Compile Include="Infrastructure\Filters\CustomOverrideFilter.cs" />
+    <Compile Include="Infrastructure\Filters\CustomActionAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\CustomAuthAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\GoogleAuthAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\RangeExceptionAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\RangeExceptionPageAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\SimpleAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\TimeActionTakeAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\TimeAllTakeAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\TimeResultTakeAttribute.cs" />
+    <Compile Include="Infrastructure\HelperMethod\CustomHelper.cs" />
+    <Compile Include="Infrastructure\ModelBinding\AddressSummaryBinder.cs" />
+    <Compile Include="Infrastructure\ModelBinding\CountryValueProvider.cs" />
+    <Compile Include="Infrastructure\ModelBinding\CustomValueProviderFactory.cs" />
+    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Infrastructure\RazorView\CustomLocationViewEngine.cs" />
+    <Compile Include="Infrastructure\Routes\CustomHttpHandler.cs" />
+    <Compile Include="Infrastructure\Routes\CustomRouteHandler.cs" />
+    <Compile Include="Controllers\Routes\RouteAreaController.cs" />
+    <Compile Include="Infrastructure\UserAgentConstraint.cs" />
+    <Compile Include="Infrastructure\ValidationSummary\FutureDateAttribute.cs" />
+    <Compile Include="Infrastructure\ValidationSummary\MustBeTrueAttribute.cs" />
+    <Compile Include="Infrastructure\ValidationSummary\NoZhouyiOnMondayAttribute.cs" />
+    <Compile Include="Models\Bundle\Appointment.cs" />
+    <Compile Include="Models\ControllerExtensibility\RemoteTask.cs" />
+    <Compile Include="Models\ExtensionMethod\EnumerableExtension.cs" />
+    <Compile Include="Models\HelperMethods\Address.cs" />
+    <Compile Include="Models\HelperMethods\Person.cs" />
+    <Compile Include="Models\HelperMethods\Role.cs" />
+    <Compile Include="Models\Home\Guest.cs" />
+    <Compile Include="Models\IUserReposity.cs" />
+    <Compile Include="Models\MetaData\PersonMetadata.cs" />
+    <Compile Include="Models\ModelBinding\AddressSummary.cs" />
+    <Compile Include="Models\NinjectTest\Discount.cs" />
+    <Compile Include="Models\NinjectTest\FlexibleDiscount.cs" />
+    <Compile Include="Models\NinjectTest\IDiscountHelper.cs" />
+    <Compile Include="Models\NinjectTest\IValueCalculator.cs" />
+    <Compile Include="Models\NinjectTest\LinqValueCalculator.cs" />
+    <Compile Include="Models\NinjectTest\MinimumDiscount.cs" />
+    <Compile Include="Models\NinjectTest\ShoppingCart.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SinglePageApp\Reservation.cs" />
+    <Compile Include="Models\SinglePageApp\ReservationRepository.cs" />
+    <Compile Include="Models\SportStore\AccountHelper.cs" />
+    <Compile Include="Models\SportStore\CartIndexViewModel.cs" />
+    <Compile Include="Models\SportStore\PagingInfo.cs" />
+    <Compile Include="Models\SportStore\ProductListViewModel.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ValidationSummary\Appointment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\_DemoStart.cshtml" />
+    <Content Include="Views\ViewStart\Index.cshtml" />
+    <Content Include="Views\ViewStart\DemoExpression.cshtml" />
+    <Content Include="Views\ViewStart\DemoArray.cshtml" />
+    <Content Include="Views\Ninject\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Summary.cshtml" />
+    <Content Include="Views\Shared\_CartLayout.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\Completed.cshtml" />
+    <Content Include="Views\CartNavigation\Menu.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+    <Content Include="Views\Shared\ProductSummary.cshtml" />
+    <Content Include="Views\Shared\FlexibleLayout.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Admin\List.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Shared\ProductSummary.Mobile.cshtml" />
+    <Content Include="Views\Shared\ActionName.cshtml" />
+    <Content Include="Views\Derived\Index.cshtml" />
+    <Content Include="Views\RedirectAndHttpError\Index.cshtml" />
+    <Content Include="Views\Shared\RangeError.cshtml" />
+    <Content Include="Views\Remote\Data.cshtml" />
+    <Content Include="Views\RazorView\Index.cshtml" />
+    <Content Include="Views\Shared\_RazorLayout.cshtml" />
+    <Content Include="Views\RazorView\List.cshtml" />
+    <Content Include="Views\Time\Time.cshtml" />
+    <Content Include="Views\HelperMethod\InnerOuterHelper.cshtml" />
+    <Content Include="Views\HelperMethod\CreatePerson.cshtml" />
+    <Content Include="Views\HelperMethod\DisplayPerson.cshtml" />
+    <Content Include="Views\HelperMethod\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\HelperMethod\EditorTemplates\Enum.cshtml" />
+    <Content Include="Views\HelperMethod\EditorTemplates\Role.cshtml" />
+    <Content Include="Views\AjaxPeople\GetPeopleData.cshtml" />
+    <Content Include="Views\AjaxPeople\GetPeople.cshtml" />
+    <Content Include="Views\AjaxPeople\_AjaxLayout.cshtml" />
+    <Content Include="Views\AjaxPeople\Index.cshtml" />
+    <Content Include="Views\ModelBinding\CreatePerson.cshtml" />
+    <Content Include="Views\ModelBinding\Index.cshtml" />
+    <Content Include="Views\Shared\_ModelBindingLayout.cshtml" />
+    <Content Include="Views\ModelBinding\AddressSummary.cshtml" />
+    <Content Include="Views\ModelBinding\Names.cshtml" />
+    <Content Include="Views\ModelBinding\Address.cshtml" />
+    <Content Include="Views\Shared\_ValidationLayout.cshtml" />
+    <Content Include="Views\ValidationSummary\MakePointing.cshtml" />
+    <Content Include="Views\ValidationSummary\Complete.cshtml" />
+    <Content Include="Views\Shared\_BundleLayout.cshtml" />
+    <Content Include="Views\Bundle\MakeBooking.cshtml" />
+    <Content Include="Views\Shared\_SinglePageAppLayout.cshtml" />
+    <Content Include="Views\SinglePageApp\Index.cshtml" />
+    <Content Include="Views\SinglePageApp\Editor.cshtml" />
+    <Content Include="Views\SinglePageApp\Summary.cshtml" />
+    <Content Include="Views\SinglePageApp\IndexWithoutModel.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\ActionInvoker\" />
+    <Folder Include="Views\Basic\" />
+    <Folder Include="Views\Customer\" />
+    <Folder Include="Views\CustomExtension\" />
+    <Folder Include="Views\CustomHelper\" />
+    <Folder Include="Views\CustomView\" />
+    <Folder Include="Views\Fast\" />
+    <Folder Include="Views\FilterCustom\" />
+    <Folder Include="Views\FilterHome\" />
+    <Folder Include="Views\GoogleAccount\" />
+    <Folder Include="Views\Manage\" />
+    <Folder Include="Views\ProductForChange\" />
+    <Folder Include="Views\RouteArea\" />
+    <Folder Include="Views\UrlsAdmin\" />
+    <Folder Include="Views\UrlsAndRoutesHome\" />
+    <Folder Include="Views\UrlsCustomer\" />
+    <Folder Include="Views\Web\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppingCartDomain\ShoppingCartDomain.csproj">
+      <Project>{c706d44a-2a93-4e32-8cef-f7ff722e6800}</Project>
+      <Name>ShoppingCartDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6645</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6645/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

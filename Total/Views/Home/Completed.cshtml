@@ -1,0 +1,33 @@
+﻿@model Total.Models.Home.Guest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css"/>
+    
+    <title>Thank you.</title>
+    <style>
+        body{background-color: aliceblue}
+    </style>
+</head>
+<body>
+<div class="text-center">
+    <h2>Thank you. @Model.Name!</h2>
+    <div class="alert-success"></div>
+    @if (Model.WillAttend == true)
+    {
+        @:It's glad that you could come. The drinks have been prepared completed.
+    }
+    else
+    {
+        @:We're sorry to hear about that. We're looking for your next time.
+    }
+</div>
+</body>
+</html>

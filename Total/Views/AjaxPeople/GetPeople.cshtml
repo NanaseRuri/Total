@@ -1,0 +1,63 @@
+﻿@using System.Net.Http
+@using Total.Models.HelperMethods
+@model string
+@{
+    ViewBag.Title = "GetPeople";
+    Layout = "_AjaxLayout.cshtml";
+    AjaxOptions options=new AjaxOptions()
+    {
+        OnSuccess = "Success",
+        Url = Url.Action("GetPeopleData"),
+        LoadingElementDuration = 1000,
+        LoadingElementId = "loading",
+        //UpdateTargetId = "peopleList"        
+    };
+}
+
+
+<!DOCTYPE html>
+
+<script>
+    function Success(data) {
+        var body = $("#peopleList");
+        body.empty();        
+        for (var i = 0; i < data.length; i++) {
+            var person = data[i];
+            body.append(`<tr><td>${person.FirstName}</td><td>${person.LastName}</td><td>${person.Role}</td></tr>`);
+        }
+    }
+</script>
+
+<div id="loading" style="display: none" class="load">
+    <p>
+        Oh, I'm fucking coming!
+    </p>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>First</th>
+        <th>Second</th>
+        <th>Role</th>
+    </tr>
+    </thead>
+    <tbody id="peopleList">
+        @Html.Action("GetPeopleData",new {roleName=Model})
+    </tbody>
+</table>
+
+@using (Ajax.BeginForm(options))
+{                
+    string[] roles = Enum.GetNames(typeof(Role));
+    IEnumerable<string> allRoles = new[] {"All"}.Concat(roles);
+    @Html.DropDownList("RoleName", new SelectList(allRoles))
+    ;
+    <button type="submit">Submit</button>        
+}
+
+@foreach (var role in Enum.GetNames(typeof(Role)))
+{
+    <div class="ajaxLink">@Ajax.ActionLink(role,"GetPeople",new{roleName=role},
+                              new AjaxOptions(){Url = Url.Action("GetPeopleData",new{roleName=role}),OnSuccess = "Success"})</div>    
+}

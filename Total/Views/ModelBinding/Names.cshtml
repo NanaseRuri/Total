@@ -1,0 +1,28 @@
+﻿@model string[]
+
+@{
+    ViewBag.Title = "Names";
+    Layout = "~/Views/Shared/_ModelBindingLayout.cshtml";
+}
+
+<h2>Names</h2>
+
+@if (Model.Length == 0)
+{
+    using (Html.BeginForm())
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            <div><label>@(i + 1):</label>@Html.TextBox("names")</div>
+        }
+        <div><input type="submit" value="submit"/></div>
+    }
+}
+else
+{
+    foreach (var name in Model)
+    {
+        <div>@name</div>
+    }
+    @Html.ActionLink("Restart","Names")
+}

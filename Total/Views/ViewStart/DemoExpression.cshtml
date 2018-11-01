@@ -1,0 +1,46 @@
+﻿@model Total.Models.Product
+
+@{
+    ViewBag.Title = "DemoExpression";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p></p>
+<table>
+    <thead>
+        <tr>
+            <td>Property</td><td>Value</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr><td>Name</td><td>@Model.Name</td></tr>
+        <tr><td>Price</td><td>@Model.Price</td></tr>
+        <tr><td>Descrip</td><td>@Model.Description</td></tr>
+        <tr><td>Stock level: </td>
+            <td>
+                @switch ((int)ViewBag.Level)
+                {
+                    case 0:
+                        @:null
+                        break;
+                    case 1:
+                        @:In dream
+                        break;
+                    default:
+                        @:@ViewBag.Level
+                        break;
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p></p>
+<div>
+    The containing element has data attributes
+</div>
+
+IsBeautiful:<input type="checkbox" checked="@ViewBag.IsBeautiful"/>
+IsGoodGirl:<input type="checkbox" checked="@ViewBag.IsGoodGirl"/>
+IsSmart:<input type="checkbox" checked="@ViewBag.IsSmart"/>

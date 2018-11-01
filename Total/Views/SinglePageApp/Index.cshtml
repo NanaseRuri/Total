@@ -1,0 +1,17 @@
+﻿@using Total.Models.SinglePageApp
+@model IEnumerable<Total.Models.SinglePageApp.Reservation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SinglePageAppLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+@section Body
+{
+    <div id="summary" class="section panel panel-primary">
+        @Html.Partial("Summary", Model)
+    </div>
+    <div>@Html.Partial("Editor", new Reservation())</div>    
+}

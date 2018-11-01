@@ -1,0 +1,29 @@
+﻿@using Total.Infrastructure.HelperMethod
+@model string
+
+@{
+    ViewBag.Title = "InnerHelper";
+    Layout = null;
+}
+
+@helper ListArray(string[] items)
+{    
+    <ul>
+        @foreach (var item in items)
+        {
+            <li>@item</li>
+        }
+    </ul>    
+}
+
+<div>Here are the inline helper:</div>
+@ListArray(ViewBag.Items)
+@ListArray(ViewBag.Lovers)
+
+<div>Here are the outer helper</div>
+@Html.ListItem((IEnumerable<string>)ViewBag.Items)
+@Html.ListItem((IEnumerable<string>)ViewBag.Lovers)
+
+<div>Here is the helper format text only</div>
+<br/>
+@Html.DisplayParagraph(Model)

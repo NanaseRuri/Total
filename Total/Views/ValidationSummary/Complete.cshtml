@@ -1,0 +1,12 @@
+﻿@model Total.Models.ValidationSummary.Appointment
+
+@{
+    ViewBag.Title = "Complete";
+    Layout = "~/Views/Shared/_ValidationLayout.cshtml";
+}
+
+<h4>Complete</h4>
+
+<div>Thank you for your confirm.</div>
+<div>Your name is: @Model.ClientName</div>
+<div>Your date: @Model.Date</div>

@@ -1,0 +1,12 @@
+﻿@model int
+
+@{
+    Layout = null;
+    ViewBag.Title = "RangeError";
+}
+
+<h2>@ViewBag.Title</h2>
+<span>Your number provided is out of range, please enter a number which is lower than 450</span>
+<div>
+    @Html.ActionLink("Return","TimeTake")
+</div>

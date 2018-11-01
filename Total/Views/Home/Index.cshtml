@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css"/>
+    <title>Hello</title>
+    <style>
+        .btn a{ color: white;text-decoration: none}
+        body{background-color: #f1f1f1}
+    </style>
+</head>
+<body>
+<div class="text-center">
+    <h1>@ViewBag.Greeting. </h1>
+    <h2>We're holding a party.</h2>
+    <h3>Would you like to join with us?</h3>
+    <div class="panel panel-success"></div>
+    <div class=""></div>
+    <div class="btn btn-success">
+        @Html.ActionLink("Rsvp Now","Rsvp")
+    </div>
+</div>
+</body>
+</html>
