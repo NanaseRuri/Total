@@ -12,7 +12,8 @@ namespace ShoppingCartDomain.Concrete
     {
         public bool Authenticate(string userName, string password)
         {
-            bool result =FormsAuthentication.Authenticate(userName, password);
+            //bool result = FormsAuthentication.Authenticate(userName, password);
+            bool result=Membership.ValidateUser(userName, password);
             if (result)
             {
                 FormsAuthentication.SetAuthCookie(userName,false);
